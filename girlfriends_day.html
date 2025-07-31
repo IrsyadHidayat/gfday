@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day Flip Book</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sakura-container"></div>
+    
+  <div id="hedlinecontainer">
+    <div id="shine">Happy Girlfriend's Day💞</div>
+  </div>
+  <div class="galery-container">
+    <div class="gallery">
+        <img src="pic1.jpeg" alt="">
+        <img src="pic2.jpeg" alt="">
+        <img src="pic3.jpeg" alt="">
+        <img src="pic4.jpeg" alt="">
+        <img src="pic5.jpeg" alt="">
+    </div>
+    <div class="gallery2">
+        <img src="pic6.jpeg" alt="">
+        <img src="pic7.jpeg" alt="">
+        <img src="pic8.jpeg" alt="">
+        <img src="pic9.jpeg" alt="">
+        <img src="pic10.jpeg" alt="">
+    </div>
+  </div>
+
+  <script>
+const container = document.querySelector('.sakura-container');
+
+function createFlower() {
+  const flower = document.createElement('div');
+  flower.classList.add('sakura-flower');
+  flower.style.left = Math.random() * window.innerWidth + 'px';
+  flower.style.animationDuration = (6 + Math.random() * 5) + 's'; 
+  flower.style.opacity = Math.random();
+  flower.style.transform = `rotate(${Math.random() * 360}deg)`;
+  container.appendChild(flower);
+
+  setTimeout(() => {
+    flower.remove();
+  }, 11000);
+}
+
+setInterval(createFlower, 300);
+</script>
+
+
+</body>
+</html>
